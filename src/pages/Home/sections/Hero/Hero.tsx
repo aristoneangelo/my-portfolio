@@ -39,13 +39,13 @@ const Hero = () => {
                             <Typography color="secondary.contrastText" variant="h4" textAlign="center">I am Software Engineer and Product Manager</Typography>
                             <Grid container display="flex" justifyContent="center" spacing={3} pt={3}>
                                 <Grid size={{ xs: 12, md: 4 }} display="flex" justifyContent="center">
-                                    <StyledButton>
+                                    <StyledButton onclick={() => console.log("Download CV")}>
                                         <DownloadIcon/>
                                         <Typography>Download CV</Typography>
                                     </StyledButton>
                                 </Grid>
                                 <Grid size={{ xs: 12, md: 4 }} display="flex" justifyContent="center">
-                                    <StyledButton>
+                                    <StyledButton onclick={() => console.log("Contact Me")}>
                                         <EmailIcon/>
                                         <Typography>Contact Me</Typography>
                                     </StyledButton>
