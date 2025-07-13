@@ -24,7 +24,6 @@ const Hero = () => {
     }))
     return (
         <>
-
             <BubbleBackground/>
             <StyledHero>
                 <Container maxWidth="lg">
