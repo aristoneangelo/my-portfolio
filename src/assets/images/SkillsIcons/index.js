@@ -1,0 +1,27 @@
+// SkillsIcons/index.js
+export { default as html_5 } from '../SkillsIcons/html_5.svg';
+export { default as css_3 } from '../SkillsIcons/css_3.svg';
+export { default as javascript } from '../SkillsIcons/javascript.svg';
+export { default as react } from '../SkillsIcons/react.svg';
+export { default as firebase } from '../SkillsIcons/firebase.svg';
+export { default as tailwind } from '../SkillsIcons/tailwind.svg';
+export { default as typescript } from '../SkillsIcons/typescript.svg';
+export { default as csharp } from '../SkillsIcons/csharp.svg';
+export { default as php } from '../SkillsIcons/php.svg';
+export { default as nodejs } from '../SkillsIcons/nodejs.svg';
+export { default as sql } from '../SkillsIcons/sql.svg';
+export { default as python } from '../SkillsIcons/python.svg';
+export { default as laravel } from '../SkillsIcons/laravel.svg';
+export { default as Django } from '../SkillsIcons/django.svg';
+export { default as git } from '../SkillsIcons/git.svg';
+export { default as github } from '../SkillsIcons/github.svg';
+export { default as postgresql } from '../SkillsIcons/postgresql.svg';
+export { default as docker } from '../SkillsIcons/docker.svg';
+export { default as kubernetes } from '../SkillsIcons/kubernetes.svg';
+export { default as aws } from '../SkillsIcons/aws.svg';
+export { default as azure } from '../SkillsIcons/azure.svg';
+export { default as azure_devops } from '../SkillsIcons/azure_devops.svg';
+export { default as google_cloud } from '../SkillsIcons/google_cloud.svg';
+export { default as material_ui } from '../SkillsIcons/material_ui.svg';
+export { default as mysql } from '../SkillsIcons/mysql.svg';
+export { default as redux } from '../SkillsIcons/redux.svg';
