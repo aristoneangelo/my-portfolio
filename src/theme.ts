@@ -7,8 +7,9 @@ let theme = createTheme({
         main: "#0b022fff",
         },
         secondary: {
-        main: "#1b6517",
+        main: "#A8FFDC",
         },
+        
     },
     typography:{
         fontFamily: "Segoe UI, Roboto, Helvetica, Arial, sans-serif",
