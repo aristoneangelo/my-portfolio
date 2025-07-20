@@ -19,7 +19,7 @@ const CardSkill = ({ children}: CardSkillProps) => {
     }));
 
     return (
-        <>
+        <>  
             <StyledCard variant="outlined">
                 {children}
             </StyledCard>
