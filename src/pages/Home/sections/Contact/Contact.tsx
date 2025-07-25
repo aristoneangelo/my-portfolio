@@ -14,10 +14,10 @@ const Contact = () => {
                         <img src={SkillIcons.github} width={"40%"} height={"40%"} />
                     </a>
                     <a href="http://">
-                        <img src={SkillIcons.github} width={"40%"} height={"40%"} />
+                        <img src={SkillIcons.linkedin} width={"40%"} height={"40%"} />
                     </a>
                     <a href="http://">
-                        <img src={SkillIcons.github} width={"40%"} height={"40%"} />
+                        <img src={SkillIcons.email} width={"40%"} height={"40%"} />
                     </a>
                 </Grid>
             </Grid>
