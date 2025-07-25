@@ -1,3 +1,4 @@
+import { styled } from "@mui/material";
 import NavBar from "../../components/NavBar/NavBar";
 import Contact from "./sections/Contact/Contact";
 import Hero from "./sections/Hero/Hero";
@@ -6,8 +7,11 @@ import Skills from "./sections/Skills/Skills";
 import { motion } from "motion/react"
 
 const Home = () => {
+  const SlyledHome = styled("div")(({theme}) => ({
+    background: "#000000ff",
+  })) 
   return (
-    <>
+    <SlyledHome>
       <NavBar />
       <motion.div
         initial={{opacity:0, scale:0}}
@@ -30,7 +34,7 @@ const Home = () => {
         <motion.div>
             <Contact/>
         </motion.div>
-    </>
+    </SlyledHome>
   );
 }
 
