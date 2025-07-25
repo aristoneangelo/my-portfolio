@@ -33,3 +33,5 @@ export { default as trello } from '../SkillsIcons/trello.svg';
 export { default as zapier } from '../SkillsIcons/zapier.svg';
 export { default as zoom } from '../SkillsIcons/zoom.svg'; 
 export { default as bootstrap } from '../SkillsIcons/bootstrap.svg';
+export { default as email } from '../SkillsIcons/email.svg';
+export { default as linkedin } from '../SkillsIcons/linkedin.svg';
