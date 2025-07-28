@@ -1,12 +1,15 @@
-import { alpha, Avatar, Box, ClickAwayListener, Container, Grid, Icon, styled, Tooltip, Typography, Zoom } from "@mui/material";
+import { alpha, Avatar, Box, ClickAwayListener, Container, Grid, Icon, styled, Tooltip, tooltipClasses, Typography, Zoom, type TooltipProps } from "@mui/material";
 import Soft from "../../../../assets/images/soft.png";
 import CardSkill from "../../../../components/Cards/CardSkill";
 import StyledSectionTitle from "../../../../components/Typography/StyledSectionTitle";
 import CodeIcon from '@mui/icons-material/Code';
 import * as SkillIcons from '../../../../assets/images/SkillsIcons';
 import ProgressSoftSkillBar from "../../../../components/Progress/ProgressSoftSkill";
-import { motion } from "motion/react";
+import { color, motion } from "motion/react";
 import React from "react";
+import theme from "../../../../theme";
+import { main } from "motion/react-client";
+import { Bolt } from "@mui/icons-material";
 
 const SkillsIconsList = [
   { src: SkillIcons.html_5, desc: "HTML5"},
@@ -77,7 +80,7 @@ const Skills = () => {
 
     const StyledSkills = styled("div")(({theme}) => ({
         padding: theme.spacing(2),
-        backgroundColor: alpha(theme.palette.primary.main, 0.9),
+        backgroundColor: theme.palette.primary.dark,
         borderRadius: theme.shape.borderRadius,
         boxShadow: theme.shadows[1],
     }));
@@ -160,7 +163,9 @@ const Skills = () => {
                 </Grid>
 
                 <StyledGrid container size={{ xs: 12, md: 12 }} padding={4} spacing={2}>
-                    <Grid size={{ xs: 12, md: 4 }}>
+                    <Grid size={{ xs: 12, md: 4 }} textAlign={"center"} 
+                    justifyItems={"center"} justifyContent={"center"} justifySelf={"center"}
+                    alignContent={"center"} alignItems={"center"} alignSelf={"center"}>
                         <StyledSectionTitle underlineWidth="50%" underlineSide="left">
                             Tools & Technologies
                         </StyledSectionTitle>
@@ -171,13 +176,44 @@ const Skills = () => {
                     <Grid size={{ xs: 12, md: 8 }}>
                         <Grid container spacing={2} padding={2}>
                             {SkillsIconsList.map((icon) => (
+                                <motion.div
+                                    animate={{
+                                        scale: [1, 1.1, 1, 1.1, 1],
+                                        rotate: [0, 0, 180, 180, 0],
+                                        borderRadius: ["0%", "0%", "50%", "50%", "0%"],
+                                    }}
+                                    transition={{
+                                        duration: 2,
+                                        ease: "easeInOut",
+                                        times: [0, 0.2, 0.5, 0.8, 1],
+                                        repeat: Infinity,
+                                        repeatDelay: 2,
+                                    }}
+                                >
                                 <ClickAwayListener onClickAway={handleTooltipClose}>
-                                    <Tooltip title={icon.desc} disableFocusListener slots={{transition: Zoom}} enterDelay={500} leaveDelay={200}>
-                                        <Grid display={"flex"} justifyContent="center" alignItems={"center"}>  
-                                            <Avatar src={icon.src}/>
+                                    <BootstrapTooltip title={icon.desc} placement="top" disableFocusListener slots={{transition: Zoom}} enterDelay={500} leaveDelay={200}>
+                                        <Grid display={"flex"} justifyContent="center" alignItems={"center"}
+                                        sx={{
+                                        filter: 'brightness(0.8)',
+                                        transition: 'filter 0.4s ease',
+                                        '&:hover': {
+                                            transition: 'filter 0.4s ease',
+                                            filter: 'brightness(1)',
+                                            scale: [1.3, 1.1, 1, 1.1, 1.3],
+                                        }
+                                        }}> 
+                                            <Box sx={{ 
+                                                padding: 1,
+                                                border: `1px solid ${alpha(theme.palette.primary.contrastText, 0.1)}`,
+                                                background: alpha(theme.palette.primary.contrastText, 0.1),
+                                                borderRadius: 10,
+                                                }}>
+                                                <Avatar src={icon.src}/>
+                                            </Box> 
                                         </Grid>
-                                    </Tooltip>
+                                    </BootstrapTooltip>
                                 </ClickAwayListener>
+                                </motion.div>
                             ))}
                         </Grid>
                     </Grid>
@@ -216,5 +252,19 @@ const Skills = () => {
         </StyledSkills>
     );
 }
+
+const BootstrapTooltip = styled(({ className, ...props }: TooltipProps) => (
+  <Tooltip {...props} arrow classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.arrow}`]: {
+    color: theme.palette.secondary.main,
+  },
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: theme.palette.secondary.main,
+    color: theme.palette.secondary.contrastText,          
+    fontSize: '14px',
+  },
+}));
+
 
 export default Skills;

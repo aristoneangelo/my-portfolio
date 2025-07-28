@@ -9,9 +9,9 @@ const StyledButton = ({children, onclick}: StyledButtonProps) => {
 
     const StyledButton = styled("button")(({theme}) => ({
         backgroundColor: "transparent",
-        borderRadius: "3px",
-        border: `2px solid ${theme.palette.primary.contrastText}`,
-        color: "#fff",
+        borderRadius: 50,
+        border: `2px solid ${theme.palette.secondary.main}`,
+        color: theme.palette.secondary.main,
         padding: "5px 15px",
         width: "100%",
         display: "inline-flex",
