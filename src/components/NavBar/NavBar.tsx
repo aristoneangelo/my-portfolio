@@ -10,6 +10,7 @@ const NavBar = () => {
     <>
       <AppBar position="relative" color="primary">
         <StyledToolbar>
+          <MenuItem>Home</MenuItem>
           <MenuItem>About</MenuItem>
           <MenuItem>Skills</MenuItem>
           <MenuItem>Projects</MenuItem>
