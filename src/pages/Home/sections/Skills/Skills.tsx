@@ -1,15 +1,13 @@
-import { alpha, Avatar, Box, ClickAwayListener, Container, Grid, Icon, styled, Tooltip, tooltipClasses, Typography, Zoom, type TooltipProps } from "@mui/material";
+import { alpha, Avatar, Box, ClickAwayListener, Container, Grid, styled, Tooltip, tooltipClasses, Typography, Zoom, type TooltipProps } from "@mui/material";
 import Soft from "../../../../assets/images/soft.png";
 import CardSkill from "../../../../components/Cards/CardSkill";
 import StyledSectionTitle from "../../../../components/Typography/StyledSectionTitle";
 import CodeIcon from '@mui/icons-material/Code';
 import * as SkillIcons from '../../../../assets/images/SkillsIcons';
 import ProgressSoftSkillBar from "../../../../components/Progress/ProgressSoftSkill";
-import { color, motion } from "motion/react";
+import { motion } from "motion/react";
 import React from "react";
 import theme from "../../../../theme";
-import { main } from "motion/react-client";
-import { Bolt } from "@mui/icons-material";
 
 const SkillsIconsList = [
   { src: SkillIcons.html_5, desc: "HTML5"},
@@ -265,6 +263,5 @@ const BootstrapTooltip = styled(({ className, ...props }: TooltipProps) => (
     fontSize: '14px',
   },
 }));
-
 
 export default Skills;

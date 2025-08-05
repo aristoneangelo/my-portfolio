@@ -21,6 +21,7 @@ const StyledButton = ({children, onclick}: StyledButtonProps) => {
         ":hover": {
             backgroundColor: "#ffffffff",
             color: "#0b022fff",
+            cursor: "none"
         }
     }))
     return (

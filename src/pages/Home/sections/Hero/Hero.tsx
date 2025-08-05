@@ -5,10 +5,16 @@ import DownloadIcon from '@mui/icons-material/Download';
 import EmailIcon from '@mui/icons-material/Email';
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import { styled} from '@mui/material/styles';
-import BubbleBackground from "../../../../components/StyledBackground/StyledBackground";
-import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
-import ArrowDropDownOutlinedIcon from '@mui/icons-material/ArrowDropDownOutlined';
+import theme from "../../../../theme";
+
+
+
+import { motion } from "framer-motion";
+import StarField from "../../../../components/Effects/StarField";
+import ShootingStar from "../../../../components/Effects/ShootingStar";
+import Moon from "../../../../components/Effects/Moon";
+import ScrollArrow from "../../../../components/Effects/ScrollArrow";
 
 
 const texts = ['FullStack Developer', 'and Product Manager'];
@@ -76,23 +82,26 @@ const TypingEffect = () => {
 const Hero = () => {
     const StyledHero = styled("div")(({theme}) => ({
        backgroundColor: theme.palette.primary.main,
-       height: "100vh",
+       height: "90vh",
        display: "flex",
        alignItems: "center",
-       justifyContent: "center",
+       justifyContent: "center",  
     }))
     const StyledImage = styled("img")(({theme}) => ({
         width: "80%",
         borderRadius: "50%",
         border: `1px solid ${theme.palette.primary.contrastText}`,
-        boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
+        boxShadow: "0 0 30px rgba(0, 0, 0, 0.5)",
         
     }))
     return (
         <>
-            <BubbleBackground/>
             <StyledHero>
                 <Container maxWidth="lg">
+                    <StarField />
+                    <ShootingStar />
+                    <Moon />
+                    <div style={{ position: 'relative', zIndex: 3, color: '#fff',  }}>
                     <Grid container spacing={2}>
                         <Grid size={{ xs: 12, md: 5 }}>
                             <Box textAlign={"center"}>  
@@ -138,17 +147,27 @@ const Hero = () => {
                                 </Grid>
                             </Grid>
                         </Grid>
-                        <Grid size={{ xs: 12, md: 12 }}>
-                            <Box textAlign={"center"}>
-                                <ArrowDropDownOutlinedIcon />
+                        
+                    </Grid>
+                    <Grid size={{ xs: 12, md: 12 }}>
+                            <Box textAlign={"center"} >
+                                <motion.div      
+                                initial={{ opacity: 0, y: 0 }}
+                                animate={{ opacity: 1, y: [0, '80%', 0] }}
+                                    transition={{
+                                        duration: 4,
+                                        repeat: Infinity,
+                                        ease: 'easeInOut',
+                                    }}>
+                                </motion.div> 
+                                <ScrollArrow/>
                             </Box>
                         </Grid>
-                    </Grid>
+                </div>
                 </Container>
             </StyledHero>
         </>
     )
 }
-
 
 export default Hero
