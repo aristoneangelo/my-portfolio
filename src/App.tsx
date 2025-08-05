@@ -1,10 +1,14 @@
+
+import CustomCursor from "./components/Effects/CustomCursor"
 import Home from "./pages/Home/Home"
 
 const App = () => {
 
   return (
     <>
-    <Home />
+        <CustomCursor/>
+        <Home />
+
     </>
   )
 }
